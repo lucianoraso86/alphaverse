@@ -1,0 +1,189 @@
+.grid-path {
+  transition: 0.15s all;
+  fill-opacity: 0.1;
+  stroke-opacity: 1;
+  stroke-width: 1px;
+  stroke-miterlimit: 1;
+  cursor: pointer;
+
+  // available ---
+  &.available-path {
+    fill-opacity: 0.2;
+    stroke: #233845;
+  }
+
+  // active and select ---
+  &.active-path {
+    fill: #15ff00;
+    stroke: #15ff00;
+    fill-opacity: 0.4;
+    stroke-opacity: 0.8;
+    z-index: 10;
+  }
+
+  // sold ---
+  &.sold-path {
+    //fill-opacity: 0.6;
+    fill: #d10000 !important;
+    stroke: #d10000 !important;
+  }
+
+  // paths hover and delete ---
+  &.hover-select,
+  &.hover-delete {
+    fill: #15ff00 !important;
+    stroke: #15ff00 !important;
+    fill-opacity: 0.6 !important;
+    stroke-opacity: 1 !important;
+    stroke-width: 1px;
+  }
+
+  &.hover-delete {
+    fill: #c3001e !important;
+    stroke: #c3001e !important;
+  }
+}
+
+.brush-pointer {
+  fill-opacity: 0;
+  stroke: #fff;
+  stroke-dasharray: 2;
+  stroke-opacity: 1;
+  stroke-width: 2px;
+  stroke-dashoffset: 1;
+  pointer-events: none;
+}
+
+.main div[role="navigation"] {
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #666;
+}
+
+.main .custom-toolbar {
+  display: grid;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  gap: 10px;
+  transition: 0.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 6px;
+  border-radius: 3px;
+  color: #ddd;
+
+  svg {
+    cursor: pointer;
+  }
+}
+
+.main .custom-toolbar.slide-toolbar {
+  right: 512px;
+}
+
+.main .back-button {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  z-index: 2;
+  text-align: center;
+  padding-right: 6px;
+  user-select: none;
+  margin-top: 15px;
+  cursor: pointer;
+
+  a,
+  p {
+    color: #fff;
+    font-size: 16px;
+    font-family: "Apex Mk2";
+    font-weight: 700;
+    padding: 5px 0;
+  }
+
+  &:hover {
+    text-shadow: 0 0 10px #ddd;
+    img {
+      filter: drop-shadow(0px 0px 5px #ddd);
+    }
+  }
+
+  img {
+    width: 9.5rem;
+  }
+}
+
+.container-flag {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column !important;
+
+  p {
+    color: #fff;
+    font-family: "Evogria";
+    font-size: 28px;
+    font-weight: 400;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  & > img {
+    width: auto;
+    height: 70px;
+  }
+}
+
+// neighborhood ---
+.main .neighborhood-list {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: 10px;
+  z-index: 2;
+  height: 250px;
+  display: flex;
+  align-items: center;
+
+  span {
+    color: #fff;
+    font-family: "Apex Mk2";
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hexagon {
+    width: 20px;
+    height: 10px;
+    position: relative;
+    margin-right: 10px;
+
+    &:before,
+    &:after {
+      content: " ";
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    &:before {
+      top: -6px;
+      left: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+    }
+
+    &:after {
+      bottom: -6px;
+      left: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+    }
+  }
+}

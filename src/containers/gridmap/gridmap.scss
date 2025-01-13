@@ -1,0 +1,28 @@
+@use "../../styles/media";
+
+.main-grid {
+  height: calc(100vh - 150px);
+}
+
+@include media.respond-below("xl") {
+  .main-grid {
+    height: calc(100vh - 105px);
+  }
+}
+
+.container-minimap {
+  align-items: flex-end;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+  display: flex;
+  justify-items: left;
+  gap: 1rem;
+
+  .minimap {
+    height: 120px;
+    width: 120px;
+    border: 5px solid #3F42BB;
+  }
+}

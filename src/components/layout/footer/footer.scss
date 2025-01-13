@@ -1,0 +1,75 @@
+@use "../../../styles/palette";
+@use "../../../styles/media";
+
+.footer-container {
+  width: 100%;
+  height: auto;
+  background: black;
+  color: white;
+
+  
+  & > div {
+    width: auto;
+    margin-left: 100px;
+    box-sizing: border-box;
+    margin-right: 100px;
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 30px;
+    max-width: none !important;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+
+    &-text {
+      color: palette.$white-text;
+      font-family: "apex";
+      letter-spacing: 0.2rem;
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      line-height: 2.6rem;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+  }
+
+  a {
+    color: white;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 600;
+
+    img {
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  .bottom-text {
+    color: white;
+    font-size: 12px;
+    font-family: Poppins;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+@include media.respond-below("xl") {
+  .footer-container > div {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+}

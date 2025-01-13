@@ -1,0 +1,33 @@
+.modal-neighborhoods {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 640px;
+  background-color: rgba($color: #ffffff, $alpha: 0.95);
+  box-shadow: 0 0 2px #ffffff;
+  padding: 16px;
+  border-radius: 4px;
+
+  .modal-title {
+    font-size: 16px;
+    font-family: "Evogria";
+    font-weight: 400;
+    color: #000;
+  }
+}
+
+.square-color {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  outline: none;
+  border-radius: 2px;
+  margin: 3px 15px 6px 0px;
+}
+
+.noborder {
+  fieldset {
+    border: none;
+  }
+}

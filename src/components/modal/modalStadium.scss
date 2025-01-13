@@ -1,0 +1,80 @@
+@use "../../styles/media.scss";
+
+.btn {
+  width: 202px;
+  height: 36px;
+  cursor: pointer;
+  background: #ffffff;
+  border: 2px solid black;
+  outline: 1px solid white;
+  font-family: "Apex Mk2";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  color: #000 !important;
+}
+
+.top {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.close-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.alignment-box {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.modal {
+  z-index: 1060;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  padding: 10px;
+  max-width: 900px;
+  background: linear-gradient(147deg, rgba(63, 66, 188, 0.5) 3.8%, rgba(0, 0, 0, 0) 80%);
+  border-radius: 2px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1040;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: display 0.15s linear;
+}
+
+.modal-backdrop.d-none {
+  display: none;
+}
+
+@include media.respond-below("sm") {
+  .modal {
+    margin: 10px !important;
+  }
+
+  .modal-backdrop {
+    right: 0 !important;
+  }
+}

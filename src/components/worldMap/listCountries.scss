@@ -1,0 +1,22 @@
+.list-countries {
+  li {
+    padding: 0;
+  }
+
+  span {
+    color: #ffffff;
+    font-family: Evogria;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  li.disabled span {
+    color: #3D3D3D;
+  }
+
+  li.sold span {
+    color: #FF0D0D;
+  }
+}

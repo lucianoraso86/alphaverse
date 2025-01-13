@@ -1,0 +1,11 @@
+@use "../../styles/media";
+
+.main-grid {
+  height: calc(100vh - 150px);
+}
+
+@include media.respond-below("xl") {
+  .main-grid {
+    height: calc(100vh - 105px);
+  }
+}

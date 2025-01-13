@@ -1,0 +1,156 @@
+@use "../../styles/media";
+
+.main-container {
+  border-radius: 14px;
+  height: calc(100vh - 74px);
+  overflow: hidden;
+
+  .homeImg {
+    width: 552px;
+    height: 787px;
+    align-self: center;
+    padding: 0 30px 30px 30px;
+  }
+
+  .subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Evogria";
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    align-self: center;
+  }
+
+  .flexContent {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap:2%;
+    margin-bottom: 20%;
+    .logo {
+      width: 120px;
+      height: 165px;
+      align-self: center;
+    }
+
+    .title {
+      font-family: "Evogria";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 40px;
+      color: #ffffff;
+    }
+  }
+  .grid-stadium,
+  .grid-seats {
+    height: 100%;
+    position: relative;
+  }
+}
+
+.btn {
+  width: 205px;
+  height: 40px;
+  cursor: pointer;
+  background: #7A7676;
+  border: 2px solid #000000;
+  outline: none;
+  border-radius: 8px;
+  transition: .2s all;
+
+  p {
+    font-family: "Apex Mk2";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    color: #000000;
+  }
+}
+
+.btn.active {
+  background: #ffffff;
+  border: 2px solid #000000;
+  outline: 1px solid #ffffff;
+}
+
+.btn:disabled {
+  background: #0d0d0d;
+
+  p {
+    color: #000000;
+  }
+}
+
+@include media.respond-below("sm") {
+  .main-container {
+    height: 100%;
+
+    .grid-stadium,
+    .grid-seats.areaActive {
+      height: calc(100vh - 74px);
+      transition: height 0.15s;
+    }
+
+    .grid-seats,
+    .grid-stadium.areaActive {
+      height: 0;
+      transition: height 0.15s;
+      overflow: hidden;
+      position: inherit;
+    }
+  }
+}
+
+.bg-container {
+  background: linear-gradient(
+    290deg,
+    rgba(63, 66, 188, 0.5) 0.31%,
+    rgba(0, 0, 0, 0) 28.62%
+  );
+}
+.bg-stadium {
+  background: linear-gradient(
+    122.57deg,
+    rgba(63, 66, 188, 0.8) 1.04%,
+    rgba(0, 0, 0, 0) 39.13%
+  );
+  border-radius: 8px;
+}
+
+.select {
+  line-height: normal !important;
+
+  .MuiSelect-select {
+    font-family: "Evogria" !important;
+    font-weight: 400 !important;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff !important;
+    padding: 0 15px;
+    padding-right: 50px !important;
+  }
+  .MuiSelect-icon {
+    top: -10px;
+    right: 0;
+    color: #ffffff !important;
+    font-size: 50px;
+    height: 50px !important;
+  }
+
+  fieldset {
+    border: none;
+  }
+}
+
+.select:focus-visible {
+  outline: none;
+}

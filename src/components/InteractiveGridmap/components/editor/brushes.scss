@@ -1,0 +1,40 @@
+.brush-pointers {
+  padding: 5px 10px;
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, 0.7);
+  gap: 10px;
+  margin: 0 10px;
+
+  span {
+    position: relative;
+    padding: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    svg {
+      transition: 0.2s all;
+      height: 40px;
+      width: 40px;
+    }
+
+    &.icon-active path {
+      stroke: #15ff00 !important;
+      fill: #15ff0040;
+    }
+
+    & svg:hover path {
+      stroke: #15ff00 !important;
+      fill: #15ff0040;
+    }
+
+    & .divider {
+      border-left: 1px solid #eee;
+      margin-left: 10px;
+      width: 1px;
+      height: 38px;
+    }
+  }
+}

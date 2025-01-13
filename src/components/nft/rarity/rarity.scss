@@ -1,0 +1,47 @@
+.card-item {
+  overflow: hidden;
+  padding: 4px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+  transition: 0.3s all;
+  margin: 10px 0 !important;
+  position: relative;
+
+  .img-soldout {
+    position: absolute;
+    z-index: 999;
+    top: -5px;
+    left: -5px;
+  }
+  
+  &.disabled > div {
+    color: #515151 !important;
+    filter: grayscale(1);
+  }
+
+  .title {
+    font-family: "Evogria";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px;
+  }
+}
+
+.card-item:hover {
+  box-shadow: 0 0 20px #3b3dad;
+}
+
+.card-item.card-active {
+  box-shadow: 0 0 20px #3b3dad;
+  max-width: 28%;
+  flex-basis: 28%;
+  margin: 0 !important;
+}
+

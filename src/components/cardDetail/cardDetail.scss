@@ -1,0 +1,136 @@
+@use "../../styles/palette.scss";
+
+.card-item-detail {
+  overflow: hidden;
+  padding: 4px;
+  border-radius: 10px;
+  color: palette.$white-text;
+  background-color: palette.$black-text;
+  cursor: pointer;
+  margin: 20px 0 20px 0 !important;
+  padding: 10px;
+  box-shadow: 0px 0px 30px -10px #fff;
+
+  .flex {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .superior-content {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .head-title {
+    font-family: "Evogria";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 34px;
+    color: palette.$white-text;
+  }
+
+  .title {
+    font-family: "Apex Mk2";
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 35px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 18px;
+  }
+
+  .title.standard {
+    color: #a174c9 !important;
+  }
+
+  .title.locker-room {
+    color: #6104ad !important;
+  }
+}
+
+.price-container {
+  font-family: "Evogria";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: palette.$white-text;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .sm-content {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+
+  .sm-price,
+  .sm-symbol {
+    font-family: "Evogria";
+    font-weight: 400;
+    font-size: 12px;
+    color: #ffffff;
+  }
+
+  .sm-symbol {
+    font-size: 16px;
+  }
+
+  .coin {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.text-disponible {
+  font-family: "Evogria";
+  font-weight: 400;
+  font-size: 10px;
+  padding-bottom: 10px;
+  color: palette.$white-text;
+}
+
+
+.card-item-detail.card-active {
+  box-shadow: 0 0 20px #3b3dad;
+  max-width: 28%;
+  flex-basis: 28%;
+  margin: 0 !important;
+}
+
+@media (max-height: 850px) {
+  .card-item-detail {
+    margin: 40px 0 0 0 !important;
+    video {
+      max-height: 300px;
+      margin: auto;
+    }
+  }
+}
+
+@media (max-height: 690px) {
+  .card-item-detail video {
+    max-height: 200px;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+.loader-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: auto;
+  max-height: 420px;
+  width: 420px !important;
+}

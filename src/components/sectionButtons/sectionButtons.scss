@@ -1,0 +1,75 @@
+@use "../../styles/media";
+
+
+.indoor {
+  display: grid;
+  gap: 5px;
+  justify-items: center;
+  
+  .comming-text {
+    font-family: "geometos";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.438rem;
+    line-height: 7px;
+    color: #ffffff;
+  }
+}
+
+.btn {
+  width: 205px;
+  height: 40px;
+  cursor: pointer;
+  border: 2px solid #000000;
+  outline: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  p {
+    font-family: "Apex Mk2";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    color: #000000;
+  }
+}
+
+.btn.active {
+  background: #ffffff;
+  border: 2px solid #000000;
+  outline: 1px solid #ffffff;
+}
+
+.btn:disabled {
+  background: #0d0d0d;
+
+  p {
+    color: #000000;
+  }
+}
+ 
+/* --- Media queries --- */
+
+@include media.respond-below("md") {
+  .text {
+    display: none;
+  }
+}
+
+@include media.respond-below("sm") {
+  .btn {
+    width: auto!important;
+    min-width: 150px;
+  }
+}
+
+@include media.respond-between("xs", "md") {
+  .text {
+    display: none;
+  }
+  .btn {
+    width: auto!important;
+  }
+}

@@ -1,0 +1,213 @@
+@use "../../styles/media";
+
+.seats-container {
+  min-height: auto;
+  flex-direction: column !important;
+
+  .cards-container {
+    padding: 10px;
+    overflow: auto;
+    gap: 8px;
+  }
+
+  .fit-section,
+  .strech-section {
+    text-align: center;
+  }
+
+  .fit-section {
+    padding: 8px 16px 0 16px;
+  }
+
+  .strech-section {
+    .items-container {
+      padding: 10px;
+      overflow: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 10px;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+
+  .grey-filter {
+    filter: grayscale(1);
+  }
+}
+
+/* labels  */
+.for-sale {
+  background: #30b421;
+  border-radius: 0 20px 20px 0;
+  position: absolute;
+  display: flex;
+  top: -0;
+  left: -5px;
+  font-family: "Evogria";
+  font-weight: 400;
+  font-size: 19px;
+  color: #ffffff;
+  padding: 4px 16px;
+  text-shadow: 3px 3px #444;
+  min-width: 125px;
+  justify-content: center;
+  transition: 0.1s ease-in-out;
+  opacity: 0;
+}
+
+.grid-seats.slideActive .for-sale {
+  opacity: 1;
+}
+
+.for-sale.sold {
+  background: #ff0000;
+}
+
+.seat-label-wall {
+  position: absolute;
+  background: rgb(97 67 143 / 30%);
+  color: #ffffff;
+  border-radius: 0 50px 50px 0;
+  height: auto;
+  top: 10%;
+  left: 63%;
+  right: 20px;
+  text-align: right;
+  padding: 5px 25px;
+  max-width: 300px;
+  z-index: 1;
+
+  h4 {
+    font-family: "Evogria";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  span {
+    font-family: "Evogria";
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  span.yellow {
+    color: #fffb00;
+  }
+}
+
+.seat-label {
+  position: absolute;
+  color: #ffffff;
+  height: auto;
+  top: 250px;
+  right: 20px;
+  text-align: right;
+  max-width: 300px;
+  z-index: 1;
+
+  h4 {
+    font-family: "Evogria";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+
+    &.seats {
+      color: #a174c9 !important;
+    }
+  }
+
+  span {
+    font-family: "Evogria";
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  span.yellow {
+    color: #fffb00;
+  }
+}
+
+.button-back {
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: "Evogria";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.card-detail-area {
+  padding: 4px;
+  border-radius: 10px;
+  background-color: #000000;
+  margin: 20px 0 20px 0 !important;
+  padding: 5px;
+  box-shadow: 0 0 20px #3b3dad;
+
+  h4 {
+    font-family: "Apex Mk2";
+    font-weight: 700;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #ffffff;
+    margin: 10px 0;
+  }
+
+  img {
+    height: 200px;
+  }
+}
+
+@include media.respond-below("sm") {
+  .seat-label {
+    position: inherit;
+    width: 100%;
+    margin-bottom: 15px;
+    max-width: 230px;
+    padding-left: 35px;
+    border-radius: 50px 0 0 50px;
+    background: rgb(97 67 143 / 30%);
+    text-align: left;
+  }
+
+  .cards-container {
+    gap: unset !important;
+  }
+
+  .seats-container .fit-section {
+    padding: 8px;
+  }
+
+  .seats-container .strech-section .items-container {
+    padding: 8px;
+    margin: 8px;
+  }
+}
+
+@media (max-height: 1080px) {
+  .seat-label {
+    top: 175px;
+  }
+}
+
+@media (max-height: 800px) {
+  .seat-label {
+    top: 45px;
+  }
+}

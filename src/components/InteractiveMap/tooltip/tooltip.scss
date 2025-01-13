@@ -1,0 +1,57 @@
+.tooltip-container {
+  height: 30px;
+  min-width: 120px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  opacity: 1;
+  z-index: 100;
+  padding: 3px;
+  text-overflow: ellipsis;
+
+  text-align: center;
+  position: relative;
+
+  .tooltip-number {
+    color: #e32424;
+  }
+
+  .tooltip-sold{
+    color: #fff;
+  }
+
+  & > span {
+    font-size: 14px;
+    font-family: "Evogria";
+    font-weight: 400;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+  }
+}
+
+.tooltip-container.coming-soon {
+  background-color: #5f4685;
+  color: #fff;
+  &:after {
+    border-color: #5f4685 transparent transparent transparent;
+  }
+}
+
+.tooltip-container.sold {
+  background-color: #D32323;
+  color: #000;
+  &:after {
+    border-color: #D32323 transparent transparent transparent;
+  }
+}
+

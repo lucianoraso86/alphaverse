@@ -1,0 +1,134 @@
+.gridmap-editor {
+  position: absolute;
+  right: -520px;
+  transition: 0.2s ease-in-out;
+  background-color: rgba($color: #ffffff, $alpha: 0.95);
+  box-shadow: 0 0 2px #ffffff;
+  z-index: 1050;
+  height: auto;
+  width: 500px !important;
+  bottom: 85px;
+  border-radius: 3px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: calc(100% - 95px);
+
+  &.active-panel {
+    right: 10px;
+  }
+
+  .container-title {
+    max-height: 180px;
+    overflow: auto;
+
+    .editor-title {
+      font-size: 16px;
+      font-family: "Evogria";
+      font-weight: 400;
+      padding: 10px;
+    }
+
+    .list-title {
+      padding: 0 10px;
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+
+      span {
+        font-size: 16px;
+        font-family: "Evogria";
+        font-weight: 400;
+        color: #e32424;
+        background: #eee;
+        padding: 3px 10px;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .nftsForm {
+    background: #eee;
+    padding: 16px;
+    padding-top: 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+}
+
+.boxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tabContainer button:not(.Mui-selected):hover {
+  color: #000;
+}
+
+.editor-title {
+  color: #000;
+}
+
+.editor-actions {
+  position: absolute;
+  width: auto !important;
+  bottom: 10px;
+  right: 10px;
+
+  & .leyend,
+  & .actions {
+    padding: 10px;
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.7);
+    gap: 10px;
+    margin-left: 10px;
+  }
+
+  button {
+    font-size: 14px;
+    font-family: "Evogria";
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 18px;
+    font-family: "Evogria";
+    font-weight: 400;
+  }
+
+  .leyend,
+  .brush-pointers {
+    padding: 10px 15px;
+  }
+
+  .leyend span {
+    color: #ffffff;
+    font-family: "Evogria";
+    font-size: 14px;
+    padding-left: 25px;
+    padding-right: 5px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.select-category {
+  margin-bottom: 10px;
+
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+}

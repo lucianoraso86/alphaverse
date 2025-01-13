@@ -1,0 +1,47 @@
+.rotate90 {
+  transform: rotate(90deg);
+}
+.rotate-90 {
+  transform: rotate(-90deg);
+}
+.rotate180 {
+  transform: rotate(180deg);
+}
+.rotate270 {
+  transform: rotate(270deg);
+}
+
+.actionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #dddddd80;
+  border-radius: 5px;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  flex: 1 1 auto;
+}
+
+.actionLabels {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  margin-left: 20px;
+  p {
+    color: #000;
+    font-size: 1.2rem;
+  }
+}
+
+.rotation-title {
+  font-size: 16px !important;
+  font-family: "Evogria" !important;
+  font-weight: 400;
+  color: #000;
+}

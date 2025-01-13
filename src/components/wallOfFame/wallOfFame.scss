@@ -1,0 +1,84 @@
+@use "../../styles/media.scss";
+
+.text {
+  font-family: "Evogria";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  color: #ffffff;
+}
+
+.stadium-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+.img-container {
+  display: flex;
+  padding: 20px 0;
+  overflow: auto;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    margin: auto;
+  }
+
+  .grey {
+    filter: grayscale(1);
+  }
+}
+
+.box-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  background-color: transparent;
+  border: none !important;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.wall-text {
+  font-family: "Evogria";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  text-align: start;
+}
+
+.small-star {
+  width: 38px;
+  height: 35px;
+}
+
+/* --- Media queries --- */
+
+@include media.respond-below("md") {
+  .text {
+    display: none;
+  }
+}
+
+@include media.respond-below("sm") {
+  .soldout-container {
+    visibility: hidden;
+  }
+}
+
+@include media.respond-between("xs", "md") {
+  .text {
+    display: none;
+  }
+  .soldout-container {
+    visibility: hidden;
+  }
+}

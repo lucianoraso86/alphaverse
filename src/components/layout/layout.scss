@@ -1,0 +1,20 @@
+@use "../../styles/media";
+
+.layout-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .layout-children-container {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+  }
+}
+
+@include media.respond-below("sm") {
+  .layout-container .layout-children-container {
+    padding: 10px 0;
+  }
+}

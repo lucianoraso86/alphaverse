@@ -1,0 +1,76 @@
+.filter {
+  display: flex;
+  background-color: #000 !important;
+  border-radius: 8px !important;
+  padding: 2px 8px;
+
+  .MuiFormControl-root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  label,
+  label span,
+  .MuiFormControlLabel-label {
+    color: #fff;
+    font-family: "Geometos";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+
+    & > svg {
+      font-size: 20px;
+    }
+
+    &.optActive,
+    &.optActive span {
+      color: #fffb00 !important;
+    }
+
+    &.optActive ~ .MuiFormControlLabel-root svg {
+      color: #fffb00 !important;
+    }
+
+    &:not(.optActive) + .MuiFormControlLabel-root + .MuiFormControlLabel-root {
+      display: none;
+    }
+
+    & .Mui-checked {
+      display: none;
+    }
+  }
+
+  .Mui-focused {
+    color: #fff !important;
+  }
+
+  .iconUp {
+    transform: rotate(90deg) translateX(-2px);
+  }
+
+  .iconDown {
+    transform: rotate(-90deg);
+  }
+}
+
+.title {
+  display: flex;
+  background-color: transparent !important;
+  align-items: center;
+  p {
+    font-family: "Evogria";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  svg {
+    color: #fff;
+    rotate: 90deg;
+    font-size: 20px;
+  }
+}

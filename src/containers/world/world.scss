@@ -1,0 +1,45 @@
+@use "../../styles/media";
+
+.main-grid {
+  height: calc(100vh - 150px);
+}
+
+@include media.respond-below("xl") {
+  .main-grid {
+    height: calc(100vh - 105px);
+  }
+}
+
+.world-list {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  overflow: auto;
+  height: 500px;
+  direction: rtl;
+  padding-left: 10px;
+
+  &::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #0a0a0a;
+    border-radius: 0;
+    margin-top: 20px;
+  }
+}
+
+.country-sold {
+  transition: 0.3s all;
+  fill: #ff0000;
+  filter: drop-shadow(0px 0px 5px #ffffff);
+}
+
+.country-open {
+  transition: 0.3s all;
+  fill: #00ff00;
+  filter: drop-shadow(0px 0px 5px #ffffff);
+}

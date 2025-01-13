@@ -1,0 +1,196 @@
+@use "../../styles/media";
+
+.main-fanzone {
+  height: calc(100vh - 150px);
+
+  .grid-stadium {
+    height: 100%;
+    position: relative;
+  }
+}
+
+@include media.respond-below("xl") {
+  .main-fanzone {
+    height: calc(100vh - 105px);
+  }
+}
+
+.btn-close {
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.img-logo {
+  width: 91px;
+  height: 125px;
+}
+
+@include media.respond-below("sm") {
+  .btn-close {
+    visibility: hidden;
+  }
+  .main-fanzone {
+    height: calc(100vh - 105px) !important;
+    margin-bottom: 0 !important;
+
+    .grid-stadium,
+    .grid-seats.areaActive {
+      height: calc(100vh - 129px);
+      transition: height 0.15s;
+    }
+
+    .grid-seats,
+    .grid-stadium.areaActive {
+      height: 0;
+      transition: height 0.15s;
+      overflow: hidden;
+      position: initial;
+    }
+
+    .main-border {
+      display: initial;
+    }
+  }
+}
+
+.bg-container {
+  background: linear-gradient(290deg, rgba(63, 66, 188, 0.5) 0.31%, rgba(0, 0, 0, 0) 28.62%);
+}
+
+.bg-stadium {
+  background: linear-gradient(122.57deg, rgba(63, 66, 188, 0.8) 1.04%, rgba(0, 0, 0, 0) 39.13%);
+}
+
+.bg-seats {
+  background: linear-gradient(153.82deg, rgba(46, 48, 111, 0.5) 3.94%, rgba(113, 115, 235, 0.08) 54.37%, rgba(67, 70, 175, 0.61) 98.87%);
+}
+
+.select {
+  line-height: normal !important;
+
+  .MuiSelect-select {
+    font-family: "Evogria" !important;
+    font-weight: 400 !important;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff !important;
+    padding: 0 15px;
+    padding-right: 50px !important;
+  }
+  .MuiSelect-icon {
+    top: -10px;
+    right: 0;
+    color: #ffffff !important;
+    font-size: 50px;
+    height: 50px !important;
+  }
+
+  fieldset {
+    border: none;
+  }
+}
+
+.select:focus-visible {
+  outline: none;
+}
+
+.indoor {
+  display: grid;
+  gap: 5px;
+  justify-items: center;
+
+  .comming-text {
+    font-family: "geometos";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.438rem;
+    line-height: 7px;
+    color: #ffffff;
+  }
+}
+
+.info-container {
+  height: 42px;
+  background: rgba(97, 67, 143, 0.3);
+  border-radius: 25px 0 0 25px;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  top: 10px;
+  right: 0;
+  transition: 0.2s ease-in-out;
+  padding: 6px 12px;
+  z-index: 0;
+
+  &.soldout > p {
+    font-family: "Evogria";
+    font-weight: 400;
+    padding: 0 20px;
+    font-size: 19px;
+    color: #f51818;
+  }
+
+  &.coming-soon > p {
+    font-family: "Evogria";
+    font-weight: 400;
+    padding: 0 20px;
+    font-size: 19px;
+    color: #ffffff;
+    text-shadow: 3px 3px #444;
+  }
+
+  .sold-img {
+    transition: all 0.1s;
+    position: absolute;
+    background-image: url("../../assets/images/sold-out.svg");
+    background-repeat: no-repeat;
+    background-size: inherit;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    left: -25px;
+    top: 0;
+  }
+}
+
+@include media.respond-above("sm") {
+  .grid-seats.slide-panel {
+    position: absolute;
+    right: -45%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    background-color: black;
+    box-shadow: 0 0 5px black;
+    z-index: 1050;
+  }
+
+  .grid-stadium.slideActive .info-container {
+    right: 45%;
+  }
+}
+
+@include media.respond-above("md") {
+  .grid-seats.slide-panel {
+    right: -35%;
+  }
+
+  .grid-stadium.slideActive .info-container {
+    right: 33%;
+  }
+}
+
+.grid-seats.slideActive {
+  right: 1px;
+}

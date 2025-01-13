@@ -1,0 +1,89 @@
+@use "../../styles/media";
+
+.main-container {
+  border-radius: 14px;
+  height: calc(100vh - 74px);
+  overflow: hidden;
+
+  .grid-stadium,
+  .grid-seats {
+    height: 100%;
+    position: relative;
+  }
+}
+
+@include media.respond-below("sm") {
+  .main-container {
+    height: 100%;
+
+    .grid-stadium,
+    .grid-seats.areaActive {
+      height: calc(100vh - 74px);
+      transition: height 0.15s;
+    }
+
+    .grid-seats,
+    .grid-stadium.areaActive {
+      height: 0;
+      transition: height 0.15s;
+      overflow: hidden;
+      position: inherit;
+    }
+  }
+}
+
+.bg-container {
+  background: linear-gradient(290deg, rgba(63, 66, 188, 0.5) 0.31%, rgba(0, 0, 0, 0) 28.62%);
+}
+.bg-stadium {
+  background: linear-gradient(122.57deg, rgba(63, 66, 188, 0.8) 1.04%, rgba(0, 0, 0, 0) 39.13%);
+  border-radius: 8px;
+}
+
+.bg-seats {
+  background: linear-gradient(154deg, rgba(63, 66, 188, 0.5) 4.22%, rgba(0, 0, 0, 0) 30%);
+}
+
+.select {
+  line-height: normal !important;
+
+  .MuiSelect-select {
+    font-family: "Evogria" !important;
+    font-weight: 400 !important;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff !important;
+    padding: 0 5px;
+    padding-right: 50px !important;
+  }
+  .MuiSelect-icon {
+    top: -10px;
+    right: 0;
+    color: #ffffff !important;
+    font-size: 50px;
+    height: 50px !important;
+  }
+
+  fieldset {
+    border: none;
+  }
+}
+
+.select:focus-visible {
+  outline: none;
+}
+
+.indoor {
+  display: grid;
+  gap: 5px;
+  justify-items: center;
+  
+  .comming-text {
+    font-family: "geometos";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.438rem;
+    line-height: 7px;
+    color: #ffffff;
+  }
+}
